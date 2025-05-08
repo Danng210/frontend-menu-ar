@@ -1,1 +1,2 @@
 /*    /index.html   200
+/api/*  https://mipaginaprueba.rf.gd/api/:splat  200
