@@ -1,6 +1,19 @@
+# Configuración de Netlify para resolver CORS
+
 [[redirects]]
   from = "/api/*"
   to = "https://mipaginaprueba.rf.gd/api/:splat"
   status = 200
   force = true
-  headers = {Access-Control-Allow-Origin = "*", Access-Control-Allow-Methods = "GET, POST, OPTIONS", Access-Control-Allow-Headers = "Origin, X-Requested-With, Content-Type, Accept"}
+  
+  [redirects.headers]
+    Access-Control-Allow-Origin = "*"
+    Access-Control-Allow-Methods = "GET, POST, OPTIONS"
+    Access-Control-Allow-Headers = "Origin, X-Requested-With, Content-Type, Accept"
+    X-From = "Netlify"
+
+# Fallback para asegurar que todas las rutas de la SPA funcionen
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

@@ -1,5 +1,5 @@
 {
-  "proxy": "http://localhost",
+  "homepage": ".",
   "name": "menu3d01",
   "version": "0.1.0",
   "private": true,
