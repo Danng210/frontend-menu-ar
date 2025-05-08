@@ -3,10 +3,11 @@
  * Centraliza la URL base para facilitar cambios futuros
  */
 
-// URL directa a la API (funcionará cuando el .htaccess esté correctamente configurado)
-const API_BASE_URL = 'https://mipaginaprueba.rf.gd/api';
+// Usar nuestro propio proxy PHP para resolver CORS
+const API_BASE_URL = 'https://mipaginaprueba.rf.gd/cors-proxy.php?endpoint=';
 
 // Otras opciones que hemos probado (por si necesitas volver a alguna):
+// const API_BASE_URL = 'https://mipaginaprueba.rf.gd/api'; // URL directa (da error de CORS)
 // const API_BASE_URL = '/api'; // Opción con redirecciones Netlify
 // const API_BASE_URL = 'https://api.allorigins.win/raw?url=https://mipaginaprueba.rf.gd/api';
 // const API_BASE_URL = 'https://cors-anywhere.herokuapp.com/https://mipaginaprueba.rf.gd/api';
