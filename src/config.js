@@ -3,12 +3,16 @@
  * Centraliza la URL base para facilitar cambios futuros
  */
 
-// Para resolver problemas de HTTPS, tienes dos opciones:
+// Diferentes opciones de proxy CORS
+// const API_BASE_URL = 'https://mipaginaprueba.rf.gd/api'; // URL directa (da error de CORS)
 
-// OPCIÓN 1: URL directa con HTTPS (cuando actives SSL en InfinityFree)
-const API_BASE_URL = 'https://mipaginaprueba.rf.gd/api';
+// Opción 1: proxy cors-anywhere (más confiable)
+const API_BASE_URL = 'https://cors-anywhere.herokuapp.com/https://mipaginaprueba.rf.gd/api';
 
-// OPCIÓN 2: Usando un proxy CORS (descomenta esta línea si la opción 1 no funciona)
-// const API_BASE_URL = 'https://corsproxy.io/?http://mipaginaprueba.rf.gd/api';
+// Opción 2: proxy corsproxy.io (alternativa)
+// const API_BASE_URL = 'https://corsproxy.io/?https://mipaginaprueba.rf.gd/api';
+
+// Opción 3: proxy thingproxy (otra alternativa)
+// const API_BASE_URL = 'https://thingproxy.freeboard.io/fetch/https://mipaginaprueba.rf.gd/api';
 
 export { API_BASE_URL };
