@@ -29,18 +29,30 @@ const [busqueda, setBusqueda] = useState("");
 const [productosFiltrados, setProductosFiltrados] = useState([]);
 
 useEffect(() => {
-const fetchProductos = async () => {
-  try {
-    const url = busqueda
-    ? `${API_BASE_URL}/buscar_productos.php?nombre=${encodeURIComponent(busqueda)}`
-    : `${API_BASE_URL}/productos.php?categoria=${categoria}`;
-
-    const res = await fetch(url);
-    const data = await res.json();
-    setProductosFiltrados(data);
-  } catch (error) {
-    console.error("Error al cargar productos:", error);
-  }
+  const fetchProductos = async () => {
+    try {
+      const url = busqueda
+        ? `${API_BASE_URL}/buscar_productos.php?nombre=${encodeURIComponent(busqueda)}`
+        : `${API_BASE_URL}/productos.php?categoria=${categoria}`;
+  
+      const res = await fetch(url, {
+        headers: {
+          'Content-Type': 'application/json', // Importante para POST/PUT
+          'Accept': 'application/json'       // Indica que esperas JSON
+        },
+        mode: 'cors' // Asegura que es una solicitud CORS
+      });
+  
+      if (!res.ok) {
+        throw new Error(`Error HTTP: ${res.status}`);
+      }
+  
+      const data = await res.json();
+      setProductosFiltrados(data);
+    } catch (error) {
+      console.error("Error al cargar productos:", error);
+      setError(error.message); // Actualiza el estado de error
+    }
   };
   fetchProductos();
 }, [busqueda, categoria]);
