@@ -6,7 +6,7 @@ import '../styles/menu.css';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useCarrito } from '../context/CarritoContext';
-import { API_BASE_URL } from '../config';
+import { API_BASE_URL, buildProxyUrl } from '../config';
 
 function capitalizar(str) {
   return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
@@ -31,9 +31,14 @@ const [productosFiltrados, setProductosFiltrados] = useState([]);
 useEffect(() => {
 const fetchProductos = async () => {
   try {
-    const url = busqueda
-    ? `${API_BASE_URL}/buscar_productos.php?nombre=${encodeURIComponent(busqueda)}`
-    : `${API_BASE_URL}/productos.php?categoria=${categoria}`;
+    let url;
+    if (busqueda) {
+      // Usar buildProxyUrl para construir la URL con el proxy CORS
+      url = buildProxyUrl('buscar_productos.php', { nombre: busqueda });
+    } else {
+      // Usar buildProxyUrl para construir la URL con el proxy CORS
+      url = buildProxyUrl('productos.php', { categoria: categoria });
+    }
 
     const res = await fetch(url);
     const data = await res.json();
@@ -55,7 +60,9 @@ useEffect(() => {
 const obtenerProductos = async () => {
   try {
     setLoading(true);
-    const response = await fetch(`${API_BASE_URL}/productos.php?categoria=${encodeURIComponent(categoria)}`);
+    // Usar buildProxyUrl para construir la URL con el proxy CORS
+    const url = buildProxyUrl('productos.php', { categoria: categoria });
+    const response = await fetch(url);
     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
     const data = await response.json();
     setProductos(data);
