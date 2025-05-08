@@ -4,7 +4,7 @@
  */
 
 // Probar con la URL directa nuevamente (después de configurar CORS en el backend)
-const API_BASE_URL = 'https://mipaginaprueba.rf.gd/api';
+const API_BASE_URL = '/.netlify/functions/proxy';
 
 
 export { API_BASE_URL };

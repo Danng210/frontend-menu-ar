@@ -1,14 +1,3 @@
-# Configuración simplificada de Netlify
+[functions]
+  directory = "netlify/functions"
 
-# Redirecciones para la API
-[[redirects]]
-  from = "/api/*"
-  to = "https://mipaginaprueba.rf.gd/api/:splat"
-  status = 200
-  force = true
-
-# Asegura que la SPA funcione correctamente
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
