@@ -3,26 +3,14 @@
  * Centraliza la URL base para facilitar cambios futuros
  */
 
-// URL base de la API original
-const API_URL = 'https://mipaginaprueba.rf.gd/api';
+// URL directa a la API (funcionará cuando el .htaccess esté correctamente configurado)
+const API_BASE_URL = 'https://mipaginaprueba.rf.gd/api';
 
-// Función para construir URLs con proxy CORS
-const buildProxyUrl = (endpoint, params = {}) => {
-  // Construir la URL completa incluyendo endpoint y parámetros
-  let fullUrl = `${API_URL}/${endpoint}`;
-  
-  // Añadir parámetros a la URL si existen
-  const queryParams = new URLSearchParams(params).toString();
-  if (queryParams) {
-    fullUrl += `?${queryParams}`;
-  }
-  
-  // Codificar la URL completa y crear la URL del proxy
-  return `https://api.allorigins.win/raw?url=${encodeURIComponent(fullUrl)}`;
-};
+// Otras opciones que hemos probado (por si necesitas volver a alguna):
+// const API_BASE_URL = '/api'; // Opción con redirecciones Netlify
+// const API_BASE_URL = 'https://api.allorigins.win/raw?url=https://mipaginaprueba.rf.gd/api';
+// const API_BASE_URL = 'https://cors-anywhere.herokuapp.com/https://mipaginaprueba.rf.gd/api';
+// const API_BASE_URL = 'https://corsproxy.io/?https://mipaginaprueba.rf.gd/api';
+// const API_BASE_URL = 'https://thingproxy.freeboard.io/fetch/https://mipaginaprueba.rf.gd/api';
 
-// Mantenemos API_BASE_URL por compatibilidad con el código existente
-const API_BASE_URL = API_URL;
-
-// Exportamos todas las variables/funciones necesarias
-export { API_URL, buildProxyUrl, API_BASE_URL };
+export { API_BASE_URL };
