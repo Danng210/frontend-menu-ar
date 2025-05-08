@@ -1,0 +1,109 @@
+.app-container {
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+}
+.everything-factura {
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+.head-container-factura {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+  width: 100%;
+  padding: 0;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+.back-button svg {
+  width: 3rem;
+  height: 3rem;
+  display: block; 
+}
+
+.titulo {
+  flex: 1;
+  text-align: left;
+  white-space: nowrap;
+}
+.n_pedido {
+  font-size: 4rem;
+  font-weight: bold;
+  color: var(--color-acento);
+  padding: 0;
+  white-space: nowrap;
+}
+.rect_gris{
+  margin-top: 10px;
+  margin-bottom: 30px;
+  background-color: var(--color-secundario);
+  border-radius: 0.625rem;
+  padding: 15px;
+}
+.items{
+  display: flex;
+  justify-content: space-between;
+  margin: 5px;
+  align-items: first baseline;
+}
+#grupo {
+  width: 60%;
+}
+
+p{ 
+  font-size: 16px; 
+  line-height: 1.2;
+  font-weight:500;
+  color: var(--color-primario);
+}
+.rect_gris #total{
+  display: flex;
+  justify-content: space-between;
+  margin: 140px 5px 5px 5px; 
+  align-items: center;
+}
+.f_total{
+  color: var(--color-acento);
+}
+
+.desplegable-container {
+  background-color: #161616;
+  border-radius: 0.8rem;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+.desplegable-titulo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-weight: 500;
+}
+.lista {
+  list-style: none;
+  padding-left: 1.4rem;
+  margin-top: 0.5rem;
+}
+.desplegable-item {
+  padding: 0.2rem 0;
+}
+.desplegable-item.actual {
+  color: #FF4919;
+  font-weight: bold;
+}
+.flecha {
+  font-size: 1.2rem;
+}
