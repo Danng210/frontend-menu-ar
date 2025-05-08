@@ -3,6 +3,7 @@ import { useParams, useLocation, useNavigate } from 'react-router-dom';
 import { FiMenu, FiX, FiPlus, FiMinus, FiShoppingCart, FiArrowLeft } from "react-icons/fi";
 import '../styles/arcamara.css';
 import { useCarrito } from '../context/CarritoContext';
+import { API_BASE_URL } from '../config';
 
 
 function formatearModelo(nombre) {
@@ -65,7 +66,7 @@ const closeMenu = () => setIsOpen(false);
 useEffect(() => {
   const obtenerProducto = async () => {
     try {
-      const response = await fetch(`/api/detalle_producto.php?nombre=${encodeURIComponent(nombreProducto)}`);
+      const response = await fetch(`${API_BASE_URL}/detalle_producto.php?nombre=${encodeURIComponent(nombreProducto)}`);
       const data = await response.json();
       setProducto(data);
     } catch (error) {

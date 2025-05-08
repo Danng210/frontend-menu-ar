@@ -1,11 +1,12 @@
 import { useNavigate } from 'react-router-dom';
+import { API_BASE_URL } from '../config';
 
 export default function Bienvenida() {
 const navigate = useNavigate();
 
 const redirigirPorID = async (idProducto) => {
     try {
-    const response = await fetch(`/api/buscar_nombre_por_id.php?id=${idProducto}`);
+    const response = await fetch(`${API_BASE_URL}/buscar_nombre_por_id.php?id=${idProducto}`);
     const data = await response.json();
 
     if (data?.NOMBRE_PRODUCTO) {

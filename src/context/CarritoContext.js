@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState } from 'react';
 import Toast from '../components/Toast';
+import { API_BASE_URL } from '../config';
 
 const CarritoContext = createContext();
 
@@ -82,7 +83,7 @@ const realizarPedido = async () => {
   }
 
   try {
-    const response = await fetch('/api/realizar_pedido.php', {
+    const response = await fetch(`${API_BASE_URL}/realizar_pedido.php`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ carrito, preferencias, metodo_pago: metodoPago, total })

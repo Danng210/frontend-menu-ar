@@ -6,6 +6,7 @@ import '../styles/menu.css';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useCarrito } from '../context/CarritoContext';
+import { API_BASE_URL } from '../config';
 
 function capitalizar(str) {
   return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
@@ -30,8 +31,8 @@ useEffect(() => {
 const fetchProductos = async () => {
   try {
     const url = busqueda
-    ? `/api/buscar_productos.php?nombre=${encodeURIComponent(busqueda)}`
-    : `/api/productos.php?categoria=${categoria}`;
+    ? `${API_BASE_URL}/buscar_productos.php?nombre=${encodeURIComponent(busqueda)}`
+    : `${API_BASE_URL}/productos.php?categoria=${categoria}`;
 
     const res = await fetch(url);
     const data = await res.json();
@@ -53,7 +54,7 @@ useEffect(() => {
 const obtenerProductos = async () => {
   try {
     setLoading(true);
-    const response = await fetch(`/api/productos.php?categoria=${encodeURIComponent(categoria)}`);
+    const response = await fetch(`${API_BASE_URL}/productos.php?categoria=${encodeURIComponent(categoria)}`);
     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
     const data = await response.json();
     setProductos(data);

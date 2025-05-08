@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { FiChevronLeft } from "react-icons/fi";
 import { Link } from 'react-router-dom';
 import '../styles/factura.css';
+import { API_BASE_URL } from '../config';
 
 export default function Factura() {
 const [productos, setProductos] = useState([]);
@@ -17,7 +18,7 @@ if (!idPedido) return;
 
 const fetchFactura = async () => {
   try {
-    const res = await fetch(`/api/obtener_factura.php?id_pedido=${idPedido}`);
+    const res = await fetch(`${API_BASE_URL}/obtener_factura.php?id_pedido=${idPedido}`);
     const data = await res.json();
     
     if (data.success) {
