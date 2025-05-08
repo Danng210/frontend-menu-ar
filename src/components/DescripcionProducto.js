@@ -1,6 +1,6 @@
 import { useRef, useEffect, useState } from 'react';
 import { useParams, useLocation, useNavigate } from 'react-router-dom';
-import { FiMenu, FiX, FiPlus, FiMinus, FiShoppingCart, FiArrowLeft } from "react-icons/fi";
+import { FiMenu, FiX, FiPlus, FiMinus, /* FiShoppingCart, */ FiArrowLeft } from "react-icons/fi";
 import '../styles/arcamara.css';
 import { useCarrito } from '../context/CarritoContext';
 import { API_BASE_URL } from '../config';
@@ -13,8 +13,10 @@ function formatearModelo(nombre) {
 export default function DescripcionProducto() {
 const streamRef = useRef(null);
 const videoContainerRef = useRef(null);  
+// eslint-disable-next-line no-unused-vars
 const [error, setError] = useState(null);
 const {
+  // eslint-disable-next-line no-unused-vars
   carrito,
   cantidades,
   aumentarCantidad,
@@ -79,6 +81,7 @@ useEffect(() => {
 const interval = setInterval(() => {
   const sceneEl = document.querySelector('a-scene');
   if (sceneEl && sceneEl.systems && sceneEl.systems.arjs) {
+    // eslint-disable-next-line no-unused-vars
     const arSystem = sceneEl.systems.arjs;
     const video = document.querySelector('video');
     if (video && video.srcObject) {

@@ -11,6 +11,7 @@ const {
   añadirAlCarrito
 } = useCarrito();
 
+// eslint-disable-next-line no-unused-vars
 const navigate = useNavigate();  
 
 useEffect(() => {

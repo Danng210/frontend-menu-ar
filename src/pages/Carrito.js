@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import MenuHam from '../components/MenuHambuerguesa';
 import { useCarrito } from '../context/CarritoContext';
-import { FiChevronLeft, FiX } from "react-icons/fi";
+import { FiChevronLeft, /* FiX */ } from "react-icons/fi";
 import { GoTrash } from 'react-icons/go';
 import { BsCashCoin } from "react-icons/bs";
 import { GrCreditCard } from "react-icons/gr";

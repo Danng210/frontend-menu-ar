@@ -15,6 +15,7 @@ function capitalizar(str) {
 export default function Menu() {
 const { categoria } = useParams();
 const [productos, setProductos] = useState([]);
+// eslint-disable-next-line no-unused-vars
 const [loading, setLoading] = useState(true);
 const [error, setError] = useState(null);
 const {
