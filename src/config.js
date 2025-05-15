@@ -4,7 +4,7 @@
  */
 
 // Probar con la URL directa nuevamente (después de configurar CORS en el backend)
-const API_BASE_URL = '/.netlify/functions/proxy';
+const API_BASE_URL = 'https://hamburger3d.infinityfreeapp.com/api';
 
 
 export { API_BASE_URL };
