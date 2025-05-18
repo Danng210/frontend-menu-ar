@@ -38,7 +38,7 @@ return (
     >
     <div id="img-mientras-tanto">
       <img id="foto-producto"
-        src={`/api/${producto.URL_IMG_PRODUCTO}`}
+        src={`../assets/images/${producto.URL_IMG_PRODUCTO}`}
         alt={producto.NOMBRE_PRODUCTO}
       />
     </div>
