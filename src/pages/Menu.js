@@ -39,8 +39,7 @@ useEffect(() => {
         headers: {
           'Content-Type': 'application/json', // Importante para POST/PUT
           'Accept': 'application/json'       // Indica que esperas JSON
-        },
-        mode: 'cors' // Asegura que es una solicitud CORS
+        }, // Asegura que es una solicitud CORS
       });
   
       if (!res.ok) {
