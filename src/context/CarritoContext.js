@@ -132,12 +132,12 @@ return (
       preferencias,
       metodoPago,
       total,
+      numeroMesa, // Se expone el estado del número de mesa
+      nombreCliente, // Se expone el estado del nombre del cliente
+      setNumeroMesa, // Se expone el setter del número de mesa
+      setNombreCliente, // Se expone el setter del nombre del cliente
       setPreferencias,
       setMetodoPago,
-      numeroMesa, // Se expone el estado del número de mesa
-      setNumeroMesa, // Se expone el setter del número de mesa
-      nombreCliente, // Se expone el estado del nombre del cliente
-      setNombreCliente, // Se expone el setter del nombre del cliente
       aumentarCantidad,
       disminuirCantidad,
       añadirAlCarrito,
