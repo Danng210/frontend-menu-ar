@@ -65,16 +65,16 @@ const handleMetodoSeleccionado = (metodo) => {
   setMetodoPago(metodo);
 };
 
-const handleNumeroMesaChange = (e) => {
-  let value = e.target.value;
-  // 1. Elimina cualquier carácter que NO sea un dígito (esto incluye 'e', '.', '+', '-')
-  value = value.replace(/[^0-9]/g, '');
-  // 2. Limita el valor a un máximo de 2 dígitos
-  if (value.length > 2) {
-    value = value.slice(0, 2);
-  }
-  setNumeroMesa(value);
-};
+// const handleNumeroMesaChange = (e) => {
+//   let value = e.target.value;
+//   // 1. Elimina cualquier carácter que NO sea un dígito (esto incluye 'e', '.', '+', '-')
+//   value = value.replace(/[^0-9]/g, '');
+//   // 2. Limita el valor a un máximo de 2 dígitos
+//   if (value.length > 2) {
+//     value = value.slice(0, 2);
+//   }
+//   setNumeroMesa(value);
+// };
 
 return (
 <div className="contenedor-contenido">
@@ -154,7 +154,7 @@ return (
     type="number" // Solo acepta números
     id="numeroMesa"
     value={numeroMesa}
-    onChange={handleNumeroMesaChange} // Usamos la nueva función aquí
+    onChange={(e) => setNumeroMesa(e.target.value)}
     placeholder="Ingrese aquí el número de su mesa"
   />
 </div>
