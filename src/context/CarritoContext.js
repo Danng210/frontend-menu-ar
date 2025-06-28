@@ -94,14 +94,14 @@ const realizarPedido = async () => {
     return false;
   }
 
-      const payload = {
-      carrito,
-      preferencias,
-      metodo_pago: metodoPago,
-      total,
-      numero_mesa: numeroMesa, // <-- ASEGÚRATE QUE ESTO ESTÁ PRESENTE Y NO VACÍO
-      nombre_cliente: nombreCliente // <-- ASEGÚRATE QUE ESTO ESTÁ PRESENTE Y NO VACÍO
-    };
+  const payload = {
+    carrito,
+    preferencias,
+    metodo_pago: metodoPago,
+    total,
+    numero_mesa: numeroMesa, // ¡AHORA SE INCLUYE!
+    nombre_cliente: nombreCliente // ¡AHORA SE INCLUYE!
+  };
 
     // --- LOG PARA DEPURACIÓN (ACTIVAR EN DESARROLLO, DESACTIVAR EN PRODUCCIÓN) ---
     console.log('Payload que se va a enviar:', payload);
@@ -109,9 +109,10 @@ const realizarPedido = async () => {
 
   try {
     const response = await fetch(`${API_BASE_URL}/realizar_pedido.php`, {
+    // const response = await fetch(`https://tu-dominio-de-hostinger.com/realizar_pedido.php`, { // Ejemplo de URL directa
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ carrito, preferencias, metodo_pago: metodoPago, total })
+      body: JSON.stringify(payload) // <--- ¡AQUÍ SE USA EL PAYLOAD COMPLETO!
     });
 
     const result = await response.json();
