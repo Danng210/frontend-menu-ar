@@ -20,9 +20,11 @@ const {
   total,
   realizarPedido,
   eliminarDelCarrito,
-  mostrarToast,
   numeroMesa, // Desestructurado desde useCarrito
+  setNumeroMesa, // Desestructurado desde useCarrito
   nombreCliente, // Desestructurado desde useCarrito
+  setNombreCliente, // Desestructurado desde useCarrito
+  mostrarToast
 } = useCarrito();
 
 const [mostrarModal, setMostrarModal] = useState(false);
