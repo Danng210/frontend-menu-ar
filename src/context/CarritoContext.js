@@ -94,6 +94,24 @@ const realizarPedido = async () => {
     return false;
   }
 
+  // AÑADIR ESTO PARA DEPURACIÓN:
+  const payload = {
+    carrito,
+    preferencias,
+    metodo_pago: metodoPago,
+    total,
+    numero_mesa: numeroMesa,
+    nombre_cliente: nombreCliente
+  };
+  console.log('Payload enviado:', payload); // **AQUÍ ESTÁ EL CONSOLE.LOG**
+
+  try {
+    const response = await fetch('/api/realizar_pedido.php', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload) // Ahora usa el payload definido
+    });
+
   try {
     const response = await fetch(`${API_BASE_URL}/realizar_pedido.php`, {
       method: 'POST',
