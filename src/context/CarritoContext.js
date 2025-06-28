@@ -93,13 +93,19 @@ const realizarPedido = async () => {
     mostrarToast('Por favor, ingrese el nombre del cliente responsable');
     return false;
   }
-  
-  try {
-    const response = await fetch('/api/realizar_pedido.php', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload) // Ahora usa el payload definido
-    });
+
+      const payload = {
+      carrito,
+      preferencias,
+      metodo_pago: metodoPago,
+      total,
+      numero_mesa: numeroMesa, // <-- ASEGÚRATE QUE ESTO ESTÁ PRESENTE Y NO VACÍO
+      nombre_cliente: nombreCliente // <-- ASEGÚRATE QUE ESTO ESTÁ PRESENTE Y NO VACÍO
+    };
+
+    // --- LOG PARA DEPURACIÓN (ACTIVAR EN DESARROLLO, DESACTIVAR EN PRODUCCIÓN) ---
+    console.log('Payload que se va a enviar:', payload);
+    // --- FIN LOG ---
 
   try {
     const response = await fetch(`${API_BASE_URL}/realizar_pedido.php`, {
