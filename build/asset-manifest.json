@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "./static/css/main.bc29e4d6.css",
+    "main.js": "./static/js/main.78d65c38.js",
+    "static/media/plato_fuerte.png": "./static/media/plato_fuerte.2ee51683d1d706968ce0.png",
+    "static/media/postre.png": "./static/media/postre.d9f6397d29f2faea7e4c.png",
+    "static/media/entradas.jpg": "./static/media/entradas.16d32c7bb5e7f2a0ad0e.jpg",
+    "static/media/anuncio_proximamente.png": "./static/media/anuncio_proximamente.deb24aa79861c06ea133.png",
+    "static/media/anuncio_enchilada.png": "./static/media/anuncio_enchilada.4a61245b258406b49ac9.png",
+    "index.html": "./index.html",
+    "main.bc29e4d6.css.map": "./static/css/main.bc29e4d6.css.map",
+    "main.78d65c38.js.map": "./static/js/main.78d65c38.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bc29e4d6.css",
+    "static/js/main.78d65c38.js"
+  ]
+}
