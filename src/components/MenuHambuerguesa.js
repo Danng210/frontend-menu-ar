@@ -59,7 +59,7 @@ return (
     </h2>
 
     <h2 className={currentPath === "/factura" ? "active" : ""} onClick={() => handleClick("/factura")}>
-      Factura
+      Detalle de compra
     </h2>
   </ul>
   </div>
