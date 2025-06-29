@@ -120,6 +120,17 @@ obtenerProducto();
   };
 }, [nombreProducto, modeloSeleccionado]);
 
+//AGREGLAR QUE LA CAM SE PETATEA AL DEVOLVERSE
+useEffect(() => {
+const handlePopState = () => {
+navigate(`/menu/${categoria}`, { replace: true });
+};
+
+window.addEventListener('popstate', handlePopState);
+return () => window.removeEventListener('popstate', handlePopState);
+}, [navigate, categoria]);
+
+  
 if (loading) return <div>Cargando...</div>;
 if (!producto) return <div>No se encontró el producto</div>;
 
