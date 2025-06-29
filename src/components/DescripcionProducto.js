@@ -58,7 +58,7 @@ const escalas = {
 };
 
 const volverACategoria = () => {
-  navigate(`/menu/${categoria}`);
+  navigate(`/menu/${categoria}`, { replace: true });
 };
 
 const toggleMenu = () => setIsOpen(!isOpen);
