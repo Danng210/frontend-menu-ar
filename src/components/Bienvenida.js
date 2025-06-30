@@ -30,7 +30,7 @@ return (
     <h2>Anuncios</h2>
 
     <div className="anuncios-scrollh">
-        <button  className="tarjeta-anuncio" onClick={() => redirigirPorID("prod-004")}>
+        <button  className="tarjeta-anuncio" onClick={() => redirigirPorID("4")}>
         </button>
         <div className="anuncio-img"></div>
     </div>
